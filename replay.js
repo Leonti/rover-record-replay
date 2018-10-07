@@ -27,13 +27,13 @@ const readFile = () => {
   lr.on('line', line => {
     lr.pause()
 
-    console.log(line)
+//    console.log(line)
     sockets.forEach(socket => sendEvent(socket, line))
     const json = JSON.parse(line)
 
     const timeout = prev ? json.time - JSON.parse(prev).time : 0
 
-    console.log(timeout)
+//    console.log(timeout)
 
     setTimeout(() => {
       lr.resume()
